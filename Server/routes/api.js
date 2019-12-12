@@ -77,6 +77,7 @@ router.post("/application", verifyToken, (req, res) => {
         }       
       }
 
+
         if(data.length == 0){
              res.status(500).send("fsadf")
       }else{
