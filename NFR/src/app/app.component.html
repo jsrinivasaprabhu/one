@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark" *ngIf="_authService.loggedIn()">
+
+  <a class="navbar-brand" href="#" style="margin-right: 50px">New Application</a>
+
+
+  <ul class="navbar-nav mr-auto">
+
+    <li class="nav-item active1">
+      <a class="nav-link" style="padding-left: 5px;padding-right: 5px">NFR</a>
+    </li>
+  </ul>
+  <div>
+    <a class="btn btn-outline-success" routerLink="/login" *ngIf="!_authService.loggedIn()">Login</a>
+    <button type="button" class="btn btn-outline-primary" *ngIf="_authService.loggedIn()" (click)="_authService.logout()">
+      Logout
+    </button>
+  </div>
+</nav>
+<div *ngIf="_authService.loggedIn()">
+  <ul class="menubar">
+    <li class="menu" [routerLinkActive]="['active']">
+      <a [routerLink]="['accounts/'+this.accountId+'/applications']">Application</a
+      >
+    </li>
+    <li class="menu" [routerLinkActive]="['active']">
+      <a class="nav-link" routerLink="/appmaps" 
+        >App Maps</a
+      >
+    </li>
+    <!--<li class="menu" [routerLinkActive]="['active']">
+      <a class="nav-link" routerLink="/uptime" 
+        >UPTIME</a
+      >
+    </li>-->
+  </ul>
+</div>
+<div class="container-fluid no-padding">
+  <router-outlet></router-outlet>
+</div>

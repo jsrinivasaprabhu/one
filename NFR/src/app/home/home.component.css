@@ -1,0 +1,43 @@
+.page-footer {
+  background-color: #3e4551 !important;
+  color: whitesmoke;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.page-footer a {
+  cursor: pointer;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.fa {
+  font-family: FontAwesome;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.btn-floating:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mr-3,
+.mx-3 {
+  margin-right: 1rem !important;
+}
+
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.rgba-white-slight,
+.rgba-white-slight:after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.font-small {
+  font-size: 0.9rem;
+}
