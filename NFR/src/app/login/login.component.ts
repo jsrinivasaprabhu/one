@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   signInUser() {
     this._auth.authenticateUser(this.userSignInData).subscribe(
       res => {
-  
+        console.log("token:" + res.token)
         sessionStorage.setItem("token", res.token);
         sessionStorage.setItem("accountId", res.accountId.accountId);
         this._router.navigate(["/accounts/"+res.accountId.accountId+"/applications"]);

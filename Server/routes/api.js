@@ -54,18 +54,10 @@ router.post("/login", (req, res) => {
   });
 });
 
-// router.get("/application", (req, res) => {
-// res.status(200).send("hi");
-
-// });
-
 router.post("/application", verifyToken, (req, res) => {
   let userData = req.body;
-
-  Application.find( (err, application) => {
-
     data=[];
-
+  Application.find( (err, application) => {
       if (err) {
       res.status(500).send(err); 
     } 
