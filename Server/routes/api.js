@@ -83,26 +83,24 @@ router.post("/application", verifyToken, (req, res) => {
 
 router.post("/test", verifyToken, (req, res) => {
   let userData = req.body;
-//   data=[];
-// Application.find( (err, application) => {
-//       if (err) {
-//       res.status(500).send(err); 
-//     } 
-//     else{
-//       console.log(application)
-//               for(i=0;i<application.length;i++){
-//           if(application[i].accountId==userData.accountId){
-//             if(application[i].accountId==req.body.accountId){
-//             data.push(application[i]) 
-//         }       
-//       }
-//       }
-//         res.status(200).send(data)
-//     }
-// });
-
-});
-
+  data=[];
+User.find( {accountId:req.body.accountId}, (err, user) => {
+      if (err) {
+      res.status(500).send(err); 
+    } 
+    else{
+      console.log(user) 
+       Application.find({accountId:req.body.accountId}, (err, application) => {
+      if (err) {
+      res.status(500).send(err); 
+    } else{
+      console.log(application)
+    }
+      res.send(application)
+       });
+        }       
+      });
+    });
 
 
 

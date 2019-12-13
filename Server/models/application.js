@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
-  applicationId: Number,
+  applicationId: String,
   applicationName: String,
-  accountId: Number,
+  accountId: String,
   accountName: String
 });
 

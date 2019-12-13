@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const nfrSchema = new Schema({
-  nfrId: Number,
-  applicationId: Number,
+  nfrId: String,
+  applicationId: String,
   applicationName: String,
   applicationType: String,
   accountName: String,
   target: String,
   source: String,
   transactionName: String,
-  concurrentLoad: Number,
-  responseTime: Number,
+  concurrentLoad: String,
+  responseTime: String,
   requestType: String,
 });
 
