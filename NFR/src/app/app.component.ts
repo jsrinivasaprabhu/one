@@ -13,7 +13,7 @@ export class AppComponent {
 
 ngOnInit(){
 
-  this.accountId=localStorage.getItem("accountId");
+  this.accountId=sessionStorage.getItem("accountId");
 }
 
 }

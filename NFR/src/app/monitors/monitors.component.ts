@@ -18,7 +18,7 @@ export class MonitorsComponent implements OnInit {
   ngOnInit() {
 
 
-    this._monitorsService.getMonitors({accountId:localStorage.getItem("accountId")}).subscribe(
+    this._monitorsService.getMonitors({accountId:sessionStorage.getItem("accountId")}).subscribe(
       res => (this.monitors = res),
       err => {
         if (err instanceof HttpErrorResponse) {
@@ -34,7 +34,7 @@ export class MonitorsComponent implements OnInit {
 
 
 
-    this._monitorsService.getMonitors(localStorage.getItem("accountId")).subscribe(
+    this._monitorsService.getMonitors(sessionStorage.getItem("accountId")).subscribe(
       res => (this.monitors = res),
       err => {
         //console.log(err);

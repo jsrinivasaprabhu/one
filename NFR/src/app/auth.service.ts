@@ -15,16 +15,16 @@ export class AuthService {
   }
 
   loggedIn() {
-    return !!localStorage.getItem("token");
+    return !!sessionStorage.getItem("token");
   }
 
   getToken() {
-    return localStorage.getItem("token");
+    return sessionStorage.getItem("token");
   }
 
   logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("accountId");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("accountId");
     this._router.navigate(["/login"]);
   }
 }
