@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+accountId;
   constructor() { }
 
   ngOnInit() {
+    this.accountId=sessionStorage.getItem("accountId");
   }
 
 }

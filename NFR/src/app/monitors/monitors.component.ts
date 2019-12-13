@@ -25,6 +25,7 @@ export class MonitorsComponent implements OnInit {
         }
   });
 
+  if(this.accountId ==  sessionStorage.getItem("accountId")){
     this._monitorsService.getMonitors({accountId:this.accountId}).subscribe(
       res => (this.monitors = res),
       err => {
@@ -36,6 +37,9 @@ export class MonitorsComponent implements OnInit {
         }
       }
     );
-
+  }
+else{
+  this._router.navigate(["/"]);
+  }
   }
 }

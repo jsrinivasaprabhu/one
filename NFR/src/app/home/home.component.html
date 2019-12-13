@@ -1,4 +1,33 @@
-<!DOCTYPE html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    401 Unauthorized error </h2>
+                <div class="error-details">
+                    <!--Sorry, an error has occured, Requested page not found!-->
+                </div>
+                <div class="error-actions">
+                    <a [routerLink]="['/accounts/'+this.accountId+'/applications']" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>  Home </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -168,13 +197,13 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
+
       <div class="page-footer font-small mdb-color pt-4">
-        <!-- Footer Links -->
+
         <div class="container text-center text-md-left">
-          <!-- Footer links -->
+  
           <div class="row text-center text-md-left mt-3 pb-3">
-            <!-- Grid column -->
+      
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">
                 R2 Engineering
@@ -185,11 +214,11 @@
                 elit.
               </p>
             </div>
-            <!-- Grid column -->
+ 
 
             <hr class="w-100 clearfix d-md-none" />
 
-            <!-- Grid column -->
+  
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
               <p>
@@ -205,11 +234,11 @@
                 <a href="#!">Product#4</a>
               </p>
             </div>
-            <!-- Grid column -->
+    
 
             <hr class="w-100 clearfix d-md-none" />
 
-            <!-- Grid column -->
+  
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
               <p>
@@ -226,10 +255,10 @@
               </p>
             </div>
 
-            <!-- Grid column -->
+       
             <hr class="w-100 clearfix d-md-none" />
 
-            <!-- Grid column -->
+           
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
               <p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
@@ -237,17 +266,17 @@
               <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
               <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
             </div>
-            <!-- Grid column -->
+             
           </div>
-          <!-- Footer links -->
+      
 
           <hr />
 
-          <!-- Grid row -->
+      
           <div class="row d-flex align-items-center">
-            <!-- Grid column -->
+             
             <div class="col-md-7 col-lg-8">
-              <!--Copyright-->
+       
               <p class="text-center text-md-left">
                 © 2019 Copyright:
                 <a href="https://www.cognizant.com/">
@@ -255,17 +284,16 @@
                 </a>
               </p>
             </div>
-            <!-- Grid column -->
+             
 
-            <!-- Grid column -->
+             
 
-            <!-- Grid column -->
+             
           </div>
-          <!-- Grid row -->
+          
         </div>
-        <!-- Footer Links -->
+ 
       </div>
-      <!-- Footer -->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -283,4 +311,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-</html>
+</html>-->
