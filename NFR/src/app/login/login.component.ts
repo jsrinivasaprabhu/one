@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
       res => {
         console.log("token:" + res.token)
         sessionStorage.setItem("token", res.token);
-        sessionStorage.setItem("accountId", res.accountId.accountId);
-        this._router.navigate(["/accounts/"+res.accountId.accountId+"/applications"]);
+        sessionStorage.setItem("accountId", res.user.accountId);
+        this._router.navigate(["/accounts/"+res.user.accountId+"/applications"]);
       },
       err => {
         this.errorText = err.error;
