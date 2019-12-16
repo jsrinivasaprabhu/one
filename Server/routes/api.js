@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/application", verifyToken, (req, res) => {
+router.post("/application", isAuthorized, verifyToken, (req, res) => {
   let userData = req.body;
     data=[];
   Application.find( (err, application) => {
@@ -81,7 +81,7 @@ router.post("/application", verifyToken, (req, res) => {
 });
  
 
-router.post("/test", verifyToken, (req, res) => {
+router.post("/test", isAuthorized, (req, res) => {
   let userData = req.body;
   data=[];
 User.find( {accountId:req.body.accountId}, (err, user) => {
@@ -104,20 +104,26 @@ User.find( {accountId:req.body.accountId}, (err, user) => {
     });
 
 
-// function isAuthorized(req, res, next) {
-//  console.log("method 1")
-//  console.log(req.headers)
-// //  if(!req.body.email){
-// //    return res.status(401).send("unauthorized request");
-// //  }
-// //  else if(!req.body.accountId){
-// //    return res.status(401).send("unauthorized request");
-// //  }
-// //  let accid=req.body.accountId;
-// //  let email=req.body.email;
+function isAuthorized(req, res, next) {
 
-//  return next();
-// }
+ if(!req.body.email){
+   return res.status(401).send("unauthorized request");
+ }
+ else if(!req.body.accountId){
+   return res.status(401).send("unauthorized request");
+ }
+ 
+ User.find({email:req.body.email}, (err, user) => {
+  //  console.log(user[0].accountId)
+      if (err) {
+      res.status(401).send(err); 
+    } else if(user[0].accountId !== req.body.accountId){
+      res.status(401).send("Unauthorized Request"); 
+    }else{
+      return next();
+    }
+       });
+}
 
 
 

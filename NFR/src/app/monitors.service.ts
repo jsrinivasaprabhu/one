@@ -9,6 +9,7 @@ export class MonitorsService {
   constructor(private http: HttpClient) {}
 
   getMonitors(accountId) {
+    // console.log(accountId)
     return this.http.post<any>(this._monitorsUrl,accountId);
   }
 }

@@ -10,7 +10,7 @@ accountId;
   constructor() { }
 
   ngOnInit() {
-    this.accountId=sessionStorage.getItem("accountId");
+    
   }
 
 }

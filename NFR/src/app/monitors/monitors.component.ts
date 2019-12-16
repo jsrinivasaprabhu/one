@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MonitorsComponent implements OnInit {
   monitors = [];
+  email;
   accountId;
   constructor(
     private _monitorsService: MonitorsService,
@@ -26,13 +27,15 @@ export class MonitorsComponent implements OnInit {
   });
 
   // if(this.accountId ==  sessionStorage.getItem("accountId")){
-    this._monitorsService.getMonitors({accountId:this.accountId}).subscribe(
+    this.email=sessionStorage.getItem("email")
+    this._monitorsService.getMonitors({accountId:this.accountId,email:this.email}).subscribe(
       res => (this.monitors = res),
       err => {
         //console.log(err);
         if (err instanceof HttpErrorResponse) {
+          console.log(err)
           if (err.status === 401) {
-            this._router.navigate(["/login"]);
+            this._router.navigate(["/error/"+err.status]);
           }
         }
       }

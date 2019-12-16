@@ -8,6 +8,7 @@ import { UptimeComponent } from "./uptime/uptime.component";
 import { AuthGuard } from "./auth.guard";
 import { AccountComponent } from "./account/account.component";
 import { CreateNewAppComponent } from "./create-new-app/create-new-app.component"
+import { ErrorComponent } from "./error/error.component"
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: "accounts/:accountId/createnewapp",
     component: CreateNewAppComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "error/:status",
+    component: ErrorComponent
   }
 ];
 

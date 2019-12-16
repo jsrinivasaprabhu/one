@@ -16,6 +16,7 @@ import { TokenInterceptorService } from "./token-interceptor.service";
 import { HomeComponent } from './home/home.component';
 import { AccountComponent } from './account/account.component';
 import { CreateNewAppComponent } from './create-new-app/create-new-app.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CreateNewAppComponent } from './create-new-app/create-new-app.component
     UptimeComponent,
     HomeComponent,
     AccountComponent,
-    CreateNewAppComponent
+    CreateNewAppComponent,
+    ErrorComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [

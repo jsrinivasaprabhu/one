@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
         console.log("token:" + res.token)
         sessionStorage.setItem("token", res.token);
         sessionStorage.setItem("accountId", res.user.accountId);
+        sessionStorage.setItem("email", res.user.email);
         this._router.navigate(["/accounts/"+res.user.accountId+"/applications"]);
       },
       err => {
