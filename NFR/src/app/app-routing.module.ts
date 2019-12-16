@@ -7,6 +7,7 @@ import { StatusComponent } from "./status/status.component";
 import { UptimeComponent } from "./uptime/uptime.component";
 import { AuthGuard } from "./auth.guard";
 import { AccountComponent } from "./account/account.component";
+import { CreateNewAppComponent } from "./create-new-app/create-new-app.component"
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: "accounts/:accountId/applications/:applicationId",
     component: AccountComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "accounts/:accountId/createnewapp",
+    component: CreateNewAppComponent,
     canActivate: [AuthGuard]
   }
 ];

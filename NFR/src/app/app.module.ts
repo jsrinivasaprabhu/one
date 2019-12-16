@@ -15,6 +15,7 @@ import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./token-interceptor.service";
 import { HomeComponent } from './home/home.component';
 import { AccountComponent } from './account/account.component';
+import { CreateNewAppComponent } from './create-new-app/create-new-app.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AccountComponent } from './account/account.component';
     StatusComponent,
     UptimeComponent,
     HomeComponent,
-    AccountComponent
+    AccountComponent,
+    CreateNewAppComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
