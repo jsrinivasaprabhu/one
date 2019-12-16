@@ -48,7 +48,7 @@ router.post("/login", (req, res) => {
         let accountId = { accountId:user.accountId }
         let payload = { userid: user._id };
         let token = jwt.sign(payload, secret);
-        res.status(200).send({ token,accountId });
+        res.status(200).send({ token,user });
       }
     }
   });
@@ -93,14 +93,31 @@ User.find( {accountId:req.body.accountId}, (err, user) => {
        Application.find({accountId:req.body.accountId}, (err, application) => {
       if (err) {
       res.status(500).send(err); 
-    } else{
-      console.log(application)
-    }
+    } else if(application.length == 0){
+      res.status(401).send("Unauthorized Request"); 
+    }else{
       res.send(application)
+    }
        });
         }       
       });
     });
+
+
+// function isAuthorized(req, res, next) {
+//  console.log("method 1")
+//  console.log(req.headers)
+// //  if(!req.body.email){
+// //    return res.status(401).send("unauthorized request");
+// //  }
+// //  else if(!req.body.accountId){
+// //    return res.status(401).send("unauthorized request");
+// //  }
+// //  let accid=req.body.accountId;
+// //  let email=req.body.email;
+
+//  return next();
+// }
 
 
 
