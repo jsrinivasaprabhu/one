@@ -81,27 +81,27 @@ router.post("/application", isAuthorized, verifyToken, (req, res) => {
 });
  
 
-router.post("/test", isAuthorized, (req, res) => {
-  let userData = req.body;
-  data=[];
-User.find( {accountId:req.body.accountId}, (err, user) => {
-      if (err) {
-      res.status(500).send(err); 
-    } 
-    else{
-      console.log(user) 
-       Application.find({accountId:req.body.accountId}, (err, application) => {
-      if (err) {
-      res.status(500).send(err); 
-    } else if(application.length == 0){
-      res.status(401).send("Unauthorized Request"); 
-    }else{
-      res.send(application)
-    }
-       });
-        }       
-      });
-    });
+// router.post("/test", isAuthorized, (req, res) => {
+//   let userData = req.body;
+//   data=[];
+// User.find( {accountId:req.body.accountId}, (err, user) => {
+//       if (err) {
+//       res.status(500).send(err); 
+//     } 
+//     else{
+//       console.log(user) 
+//        Application.find({accountId:req.body.accountId}, (err, application) => {
+//       if (err) {
+//       res.status(500).send(err); 
+//     } else if(application.length == 0){
+//       res.status(401).send("Unauthorized Request"); 
+//     }else{
+//       res.send(application)
+//     }
+//        });
+//         }       
+//       });
+//     });
 
 
 function isAuthorized(req, res, next) {
