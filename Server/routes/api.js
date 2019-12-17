@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/application", isAuthorized, verifyToken, (req, res) => {
+router.post("/applications", isAuthorized, verifyToken, (req, res) => {
   let userData = req.body;
     data=[];
   Application.find( (err, application) => {

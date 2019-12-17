@@ -1,35 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-import { MonitorsService } from "../monitors.service";
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ActivatedRoute } from '@angular/router';
+import { ApplicationsService } from "../applications.service";
 
 @Component({
-  selector: "app-monitors",
-  templateUrl: "./monitors.component.html",
-  styleUrls: ["./monitors.component.css"]
+  selector: 'app-applications',
+  templateUrl: './applications.component.html',
+  styleUrls: ['./applications.component.css']
 })
-export class MonitorsComponent implements OnInit {
-  monitors = [];
+export class ApplicationsComponent implements OnInit {
+  applications = [];
   email;
   accountId;
-  constructor(
-    private _monitorsService: MonitorsService,
-    private _router: Router,private route: ActivatedRoute
-  ) {}
+  constructor(private _applicationsService: ApplicationsService,
+    private _router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
-     this.route.params.subscribe( params => {
+this.route.params.subscribe( params => {
         if( params['accountId'] != null){
           this.accountId=params['accountId'];
           // window.alert(this.accountName)
         }
   });
-
-  // if(this.accountId ==  sessionStorage.getItem("accountId")){
-    this.email=sessionStorage.getItem("email")
-    this._monitorsService.getMonitors({accountId:this.accountId,email:this.email}).subscribe(
-      res => (this.monitors = res),
+  this.email=sessionStorage.getItem("email")
+  this._applicationsService.getApplications({accountId:this.accountId,email:this.email}).subscribe(
+      res => (this.applications = res),
       err => {
         //console.log(err);
         if (err instanceof HttpErrorResponse) {

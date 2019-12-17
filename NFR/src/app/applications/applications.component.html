@@ -1,3 +1,4 @@
+
 <div class="text-right col-md-10" style="margin-top: 15px;">
 <button type="button" class="btn btn-info" (click)="rout()"> + Add Application</button>
 </div>
@@ -12,11 +13,11 @@
             <th scope="col">Account Name</th>
           </tr>
         </thead>
-        <tbody *ngFor="let monitor of monitors">
+        <tbody *ngFor="let application of applications">
           <tr>
-    <td class="btn btn-link" [routerLink]="['/accounts/'+monitor.accountId+'/applications/'+monitor.applicationId]">{{ monitor.applicationId }}</td>
-            <td>{{ monitor.applicationName }}</td>
-            <td>{{ monitor.accountName }}</td>
+    <td class="btn btn-link" [routerLink]="['/accounts/'+applications.accountId+'/applications/'+applications.applicationId]">{{ application.applicationId }}</td>
+            <td>{{ application.applicationName }}</td>
+            <td>{{ application.accountName }}</td>
           </tr>
         </tbody>
       </table>

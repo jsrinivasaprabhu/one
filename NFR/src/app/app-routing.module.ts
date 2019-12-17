@@ -2,13 +2,12 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
-import { MonitorsComponent } from "./monitors/monitors.component";
-import { StatusComponent } from "./status/status.component";
-import { UptimeComponent } from "./uptime/uptime.component";
 import { AuthGuard } from "./auth.guard";
 import { AccountComponent } from "./account/account.component";
 import { CreateNewAppComponent } from "./create-new-app/create-new-app.component"
 import { ErrorComponent } from "./error/error.component"
+import { ApplicationsComponent } from "./applications/applications.component"
+import { ServiceMapsComponent } from './service-maps/service-maps.component';
 
 const routes: Routes = [
   {
@@ -22,17 +21,12 @@ const routes: Routes = [
   },
   {
     path: "accounts/:accountId/applications",
-    component: MonitorsComponent,
+    component: ApplicationsComponent,
     canActivate: [AuthGuard]
   },
   {
     path: "appmaps",
-    component: StatusComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "uptime",
-    component: UptimeComponent,
+    component: ServiceMapsComponent,
     canActivate: [AuthGuard]
   },
   {
